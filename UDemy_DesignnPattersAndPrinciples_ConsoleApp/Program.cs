@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
+using UDemy_DesignnPattersAndPrinciples_ConsoleApp.DependencyInversion;
+using UDemy_DesignnPattersAndPrinciples_ConsoleApp.DependencyInversion.enums;
+using UDemy_DesignnPattersAndPrinciples_ConsoleApp.DependencyInversion.interfaces;
 using UDemy_DesignnPattersAndPrinciples_ConsoleApp.Liskov;
 using UDemy_DesignnPattersAndPrinciples_ConsoleApp.OpenClose;
 using UDemy_DesignnPattersAndPrinciples_ConsoleApp.OpenClose.enums;
@@ -9,23 +13,48 @@ namespace UDemy_DesignnPattersAndPrinciples_ConsoleApp
 {
     internal class Program
     {
-        static public int Area(Rectangle r) => r.Width * r.Height;
+        #region
+        // Part of Liskov Principle.
+        //static public int Area(Rectangle r) => r.Width * r.Height;
+        #endregion
+
+        #region
+        // Part of Dependency Inversion
+        //public Program(Relationship relationship)
+        //{
+        //    var relations = relationship.Relations;
+        //    foreach (var r in relations.Where(
+        //            x => x.Item1.Name == "John" && x.Item2 == Relationships.Parent
+        //        ))
+        //    {
+        //        Console.WriteLine($"John has child call {r.Item3.Name}");
+        //    }
+        //}
+
+        public Program(IRelationshipBrowser relationshipBrowser)
+        {
+            foreach (var rb in relationshipBrowser.FindAllChildrenOf("John"))
+            {
+                Console.WriteLine($"John has a child called {rb.Name}");
+            }
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region
             // Single Responsibility Principle
 
-           // var j = new Journal();
-           // j.AddEntry("I was try to cry!");
-           // j.AddEntry("I ate a bbug!");
+            // var j = new Journal();
+            // j.AddEntry("I was try to cry!");
+            // j.AddEntry("I ate a bbug!");
 
-            
-           // Console.WriteLine(j);
-           // var p = new Persistence();
-           // string filename = @"journal.txt";
-           // p.SaveToFile(j, filename, true);
-           //// Process.Start(filename);
-           // Console.ReadLine();
+
+            // Console.WriteLine(j);
+            // var p = new Persistence();
+            // string filename = @"journal.txt";
+            // p.SaveToFile(j, filename, true);
+            //// Process.Start(filename);
+            // Console.ReadLine();
             #endregion
 
             #region
@@ -66,14 +95,29 @@ namespace UDemy_DesignnPattersAndPrinciples_ConsoleApp
 
             #region
             // Liskov Principle
-            Rectangle rc = new Rectangle(2,3);
+            //Rectangle rc = new Rectangle(2,3);
 
-            Console.WriteLine($"{rc} has area {Area(rc)}");
+            //Console.WriteLine($"{rc} has area {Area(rc)}");
 
-            Rectangle sq = new Square();
-            sq.Width = 4;
+            //Rectangle sq = new Square();
+            //sq.Width = 4;
 
-            Console.WriteLine($"{sq} has area {Area(sq)}");
+            //Console.WriteLine($"{sq} has area {Area(sq)}");
+
+            #endregion
+
+            #region
+            // Dependency Inversion Principle
+
+            var parent = new Person { Name = "John" };
+            var child1 = new Person { Name = "Simith" };
+            var child2 = new Person { Name = "Marry" };
+
+            var relationships = new Relationship();
+            relationships.AddParentAndChild(parent, child2);
+            relationships.AddParentAndChild(parent, child1);
+
+            new Program(relationships);
 
             #endregion
 
