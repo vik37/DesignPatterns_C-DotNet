@@ -21,7 +21,7 @@ namespace UDemy_DesignnPattersAndPrinciples_ConsoleApp.DependencyInversion
         {
             foreach (var r in relations.Where(
                x => x.Item1.Name == "John" && x.Item2 == Relationships.Parent
-            ))
+            ).Select(x => new { x.Item3 }))
             {
                 yield return r.Item3;
             }
