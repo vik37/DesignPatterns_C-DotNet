@@ -13,10 +13,11 @@ namespace BuilderDP_UdemyDesignPatterns_ConsoleApp.HtmlBuilder
             this.RootName = rootName;
             root.Name = rootName;
         }
-        public void AddChild(string childName, string childText)
+        public HtmlBuilderTags AddChild(string childName, string childText)
         {
             var e = new HtmlElement(childName, childText);
             root.Elements.Add(e);
+            return this;
         }
         public override string ToString()
         {
