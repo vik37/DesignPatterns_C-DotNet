@@ -1,4 +1,5 @@
 ﻿using BuilderDP_UdemyDesignPatterns_ConsoleApp.HtmlBuilder;
+using BuilderDP_UdemyDesignPatterns_ConsoleApp.PersonBuilder;
 using System;
 using System.Text;
 
@@ -29,9 +30,16 @@ namespace BuilderDP_UdemyDesignPatterns_ConsoleApp
             #endregion
             #region
             // With builder design pattern.
-            var builder = new HtmlBuilderTags("ul");
-            builder.AddChild("li","Hello").AddChild("li", "World");
-            Console.WriteLine(builder.ToString());
+            //var builder = new HtmlBuilderTags("ul");
+            //builder.AddChild("li","Hello").AddChild("li", "World");
+            //Console.WriteLine(builder.ToString());
+            #endregion
+            #region
+            // Recursive generics fluent interface
+            var me = Person.New.Called("Viktor")
+                                .WorskAsA("Software Developer")
+                                .Build();
+            Console.WriteLine(me);
             #endregion
             Console.ReadLine();
         }
