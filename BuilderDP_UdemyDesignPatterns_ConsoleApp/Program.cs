@@ -30,8 +30,7 @@ namespace BuilderDP_UdemyDesignPatterns_ConsoleApp
             #region
             // With builder design pattern.
             var builder = new HtmlBuilderTags("ul");
-            builder.AddChild("li","Hello");
-            builder.AddChild("li", "World");
+            builder.AddChild("li","Hello").AddChild("li", "World");
             Console.WriteLine(builder.ToString());
             #endregion
             Console.ReadLine();
