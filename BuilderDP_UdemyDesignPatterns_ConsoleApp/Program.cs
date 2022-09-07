@@ -1,5 +1,7 @@
 ﻿using BuilderDP_UdemyDesignPatterns_ConsoleApp.HtmlBuilder;
 using BuilderDP_UdemyDesignPatterns_ConsoleApp.PersonBuilder;
+using BuilderDP_UdemyDesignPatterns_ConsoleApp.StepwiseBuilder;
+using BuilderDP_UdemyDesignPatterns_ConsoleApp.StepwiseBuilder.enums;
 using System;
 using System.Text;
 
@@ -36,10 +38,18 @@ namespace BuilderDP_UdemyDesignPatterns_ConsoleApp
             #endregion
             #region
             // Recursive generics fluent interface
-            var me = Person.New.Called("Viktor")
-                                .WorskAsA("Software Developer")
+            //var me = Person.New.Called("Viktor")
+            //                    .WorskAsA("Software Developer")
+            //                    .Build();
+            //Console.WriteLine(me);
+            #endregion
+            #region
+            // Stepwise Builder
+            var car = CarBuilder.Create() // Will get (return) ISpecifyCarType.
+                                .OfType(CarType.Crossover)  // Will get (return) ISpecifyWheelSize.
+                                .WithWeels(18) // Will get (return) IBuildCar.
                                 .Build();
-            Console.WriteLine(me);
+
             #endregion
             Console.ReadLine();
         }
