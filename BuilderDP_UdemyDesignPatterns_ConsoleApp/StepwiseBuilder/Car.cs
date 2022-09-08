@@ -9,5 +9,10 @@ namespace BuilderDP_UdemyDesignPatterns_ConsoleApp.StepwiseBuilder
     {
         public CarType Type;
         public int WheelSize;
+
+        public override string ToString()
+        {
+            return $"Car Type = {Type.ToString()} \nWheel Size = {WheelSize}";
+        }
     }
 }

@@ -49,6 +49,7 @@ namespace BuilderDP_UdemyDesignPatterns_ConsoleApp
                                 .OfType(CarType.Crossover)  // Will get (return) ISpecifyWheelSize.
                                 .WithWeels(18) // Will get (return) IBuildCar.
                                 .Build();
+            Console.WriteLine(car);
 
             #endregion
             Console.ReadLine();
