@@ -1,4 +1,5 @@
-﻿using BuilderDP_UdemyDesignPatterns_ConsoleApp.FunctionalBuilder;
+﻿using BuilderDP_UdemyDesignPatterns_ConsoleApp.FacetedBuilder;
+using BuilderDP_UdemyDesignPatterns_ConsoleApp.FunctionalBuilder;
 using BuilderDP_UdemyDesignPatterns_ConsoleApp.HtmlBuilder;
 using BuilderDP_UdemyDesignPatterns_ConsoleApp.PersonBuilder;
 using BuilderDP_UdemyDesignPatterns_ConsoleApp.StepwiseBuilder;
@@ -54,11 +55,23 @@ namespace BuilderDP_UdemyDesignPatterns_ConsoleApp
             #endregion
             #region
             // Functional Builder DP
-            var person = new PersonBuild()
-                                .Called("Sarah")
-                                .WorksAs("Software Developer")
-                                .Build();
-            Console.WriteLine(person);
+            //var person = new PersonBuild()
+            //                    .Called("Sarah")
+            //                    .WorksAs("Software Developer")
+            //                    .Build();
+            //Console.WriteLine(person);
+            #endregion
+            #region
+            // Faceted Builder
+            var eb = new EmployeeBuilder();
+            Employee employee = eb.lives.At("123 London Road")
+                            .In("London")
+                            .WithPostcode("SW12AS")
+                            .works.At("Fabrikam")
+                            .AsA("Web Developer")
+                            .Earning(80000);
+            Console.WriteLine(employee);
+
             #endregion
             Console.ReadLine();
         }
