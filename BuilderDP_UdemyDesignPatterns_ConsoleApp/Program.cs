@@ -1,4 +1,5 @@
-﻿using BuilderDP_UdemyDesignPatterns_ConsoleApp.HtmlBuilder;
+﻿using BuilderDP_UdemyDesignPatterns_ConsoleApp.FunctionalBuilder;
+using BuilderDP_UdemyDesignPatterns_ConsoleApp.HtmlBuilder;
 using BuilderDP_UdemyDesignPatterns_ConsoleApp.PersonBuilder;
 using BuilderDP_UdemyDesignPatterns_ConsoleApp.StepwiseBuilder;
 using BuilderDP_UdemyDesignPatterns_ConsoleApp.StepwiseBuilder.enums;
@@ -45,12 +46,19 @@ namespace BuilderDP_UdemyDesignPatterns_ConsoleApp
             #endregion
             #region
             // Stepwise Builder
-            var car = CarBuilder.Create() // Will get (return) ISpecifyCarType.
-                                .OfType(CarType.Crossover)  // Will get (return) ISpecifyWheelSize.
-                                .WithWeels(18) // Will get (return) IBuildCar.
+            //var car = CarBuilder.Create() // Will get (return) ISpecifyCarType.
+            //                    .OfType(CarType.Crossover)  // Will get (return) ISpecifyWheelSize.
+            //                    .WithWeels(18) // Will get (return) IBuildCar.
+            //                    .Build();
+            //Console.WriteLine(car);
+            #endregion
+            #region
+            // Functional Builder DP
+            var person = new PersonBuild()
+                                .Called("Sarah")
+                                .WorksAs("Software Developer")
                                 .Build();
-            Console.WriteLine(car);
-
+            Console.WriteLine(person);
             #endregion
             Console.ReadLine();
         }
