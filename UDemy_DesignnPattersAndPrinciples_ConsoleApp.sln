@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UDemy_DesignnPattersAndPrinciples_ConsoleApp", "UDemy_DesignnPattersAndPrinciples_ConsoleApp\UDemy_DesignnPattersAndPrinciples_ConsoleApp.csproj", "{2B034741-427C-4412-A0EB-D6DD3E08275A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderDP_UdemyDesignPatterns_ConsoleApp", "BuilderDP_UdemyDesignPatterns_ConsoleApp\BuilderDP_UdemyDesignPatterns_ConsoleApp.csproj", "{CB046058-6857-424A-AA1D-711248D05008}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuilderDP_UdemyDesignPatterns_ConsoleApp", "BuilderDP_UdemyDesignPatterns_ConsoleApp\BuilderDP_UdemyDesignPatterns_ConsoleApp.csproj", "{CB046058-6857-424A-AA1D-711248D05008}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderDP_Homework", "BuilderDP_Homework\BuilderDP_Homework.csproj", "{49340425-CCB5-4883-AA49-3E0844CB77AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CB046058-6857-424A-AA1D-711248D05008}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB046058-6857-424A-AA1D-711248D05008}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB046058-6857-424A-AA1D-711248D05008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49340425-CCB5-4883-AA49-3E0844CB77AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49340425-CCB5-4883-AA49-3E0844CB77AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49340425-CCB5-4883-AA49-3E0844CB77AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49340425-CCB5-4883-AA49-3E0844CB77AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

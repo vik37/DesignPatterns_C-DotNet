@@ -34,9 +34,9 @@ namespace BuilderDP_UdemyDesignPatterns_ConsoleApp
             #endregion
             #region
             // With builder design pattern.
-            //var builder = new HtmlBuilderTags("ul");
-            //builder.AddChild("li","Hello").AddChild("li", "World");
-            //Console.WriteLine(builder.ToString());
+            var builder = new HtmlBuilderTags("ul");
+            builder.AddChild("li", "Hello").AddChild("li", "World");
+            Console.WriteLine(builder.ToString());
             #endregion
             #region
             // Recursive generics fluent interface
@@ -63,14 +63,14 @@ namespace BuilderDP_UdemyDesignPatterns_ConsoleApp
             #endregion
             #region
             // Faceted Builder
-            var eb = new EmployeeBuilder();
-            Employee employee = eb.lives.At("123 London Road")
-                            .In("London")
-                            .WithPostcode("SW12AS")
-                            .works.At("Fabrikam")
-                            .AsA("Web Developer")
-                            .Earning(80000);
-            Console.WriteLine(employee);
+            //var eb = new EmployeeBuilder();
+            //Employee employee = eb.lives.At("123 London Road")
+            //                .In("London")
+            //                .WithPostcode("SW12AS")
+            //                .works.At("Fabrikam")
+            //                .AsA("Web Developer")
+            //                .Earning(80000);
+            //Console.WriteLine(employee);
 
             #endregion
             Console.ReadLine();
