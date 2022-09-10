@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UDemy_DesignnPattersAndPrin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuilderDP_UdemyDesignPatterns_ConsoleApp", "BuilderDP_UdemyDesignPatterns_ConsoleApp\BuilderDP_UdemyDesignPatterns_ConsoleApp.csproj", "{CB046058-6857-424A-AA1D-711248D05008}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderDP_Homework", "BuilderDP_Homework\BuilderDP_Homework.csproj", "{49340425-CCB5-4883-AA49-3E0844CB77AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuilderDP_Homework", "BuilderDP_Homework\BuilderDP_Homework.csproj", "{49340425-CCB5-4883-AA49-3E0844CB77AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactrotyDP_UdemyDesigPatters_CosoleApp", "FactrotyDP_UdemyDesigPatters_CosoleApp\FactrotyDP_UdemyDesigPatters_CosoleApp.csproj", "{597C5713-E647-4B92-A2B7-A955686CBC91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{49340425-CCB5-4883-AA49-3E0844CB77AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49340425-CCB5-4883-AA49-3E0844CB77AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49340425-CCB5-4883-AA49-3E0844CB77AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{597C5713-E647-4B92-A2B7-A955686CBC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{597C5713-E647-4B92-A2B7-A955686CBC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{597C5713-E647-4B92-A2B7-A955686CBC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{597C5713-E647-4B92-A2B7-A955686CBC91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
