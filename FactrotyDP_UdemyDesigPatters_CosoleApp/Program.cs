@@ -1,4 +1,5 @@
-﻿using FactrotyDP_UdemyDesigPatters_CosoleApp.AsynchronousFactoryMethod;
+﻿using FactrotyDP_UdemyDesigPatters_CosoleApp.AbstractFactory;
+using FactrotyDP_UdemyDesigPatters_CosoleApp.AsynchronousFactoryMethod;
 using FactrotyDP_UdemyDesigPatters_CosoleApp.ObjectTrackingAndBulkReplacment;
 using FactrotyDP_UdemyDesigPatters_CosoleApp.PointExample;
 using System;
@@ -44,7 +45,9 @@ namespace FactrotyDP_UdemyDesigPatters_CosoleApp
             #endregion
             #region
             // Abstract Factory
-
+            var machine = new HotDrinkMachine();
+            var drink = machine.MakeDrink(HotDrinkMachine.AvailableDrink.Tea, 100);
+            drink.Consum();
             #endregion
 
             Console.ReadLine();
