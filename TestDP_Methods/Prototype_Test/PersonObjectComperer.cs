@@ -1,4 +1,5 @@
 ﻿using PrototypeDP_UdemyDesignPatterns_ConsoleApp.ConstructorCopy;
+using PrototypeDP_UdemyDesignPatterns_ConsoleApp.PrototypeInheritance;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -6,9 +7,9 @@ using System.Text;
 
 namespace TestDP_Methods.Prototype_Test
 {
-    internal class PersonObjectComperer : IEqualityComparer<Person>
+    internal class PersonObjectComperer : IEqualityComparer<Employee>
     {
-        public bool Equals(Person x, Person y)
+        public bool Equals(Employee x, Employee y)
         {
             if (x == null && y == null)
                 { return true; }
@@ -30,7 +31,7 @@ namespace TestDP_Methods.Prototype_Test
             }
         }
 
-        public int GetHashCode([DisallowNull] Person obj)
+        public int GetHashCode([DisallowNull] Employee obj)
         {
             return $"{obj.Names}{obj.Address.HouseNumber}{obj.Address.StreetName}".GetHashCode();
         }
