@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PrototypeDP_UdemyDesignPatterns_ConsoleApp.ConstructorCopy
 {
-    public class Address
+    public class Address : IPrototype<Address>
     {
         public string StreetName;
         public int HouseNumber;
@@ -25,6 +25,11 @@ namespace PrototypeDP_UdemyDesignPatterns_ConsoleApp.ConstructorCopy
         public override string ToString()
         {
             return $"{nameof(StreetName)}: {StreetName}, {nameof(HouseNumber)}: {HouseNumber}";
+        }
+
+        public Address DeepCopy()
+        {
+            return new Address(StreetName, HouseNumber);
         }
     }
 }
