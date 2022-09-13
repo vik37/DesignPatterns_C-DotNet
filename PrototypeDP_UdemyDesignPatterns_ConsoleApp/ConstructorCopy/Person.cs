@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PrototypeDP_UdemyDesignPatterns_ConsoleApp.ConstructorCopy
 {
-    public class Person
+    public class Person : IPrototype<Person>
     {
         public string[] Names;
         public Address Address;
@@ -31,6 +31,11 @@ namespace PrototypeDP_UdemyDesignPatterns_ConsoleApp.ConstructorCopy
         public override string ToString()
         {
             return $"{nameof(Names)}: {string.Join(" ", Names)}, {nameof(Address)}: {Address}";
+        }
+
+        public Person DeepCopy()
+        {
+            return new Person(Names, Address.DeepCopy());
         }
     }
 }
