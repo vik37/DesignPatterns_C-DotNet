@@ -2,30 +2,26 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PrototypeDP_UdemyDesignPatterns_ConsoleApp.IClonableIsBad
+namespace PrototypeDP_UdemyDesignPatterns_ConsoleApp.ConstructorCopy
 {
-    public class Address : ICloneable
+    public class Address
     {
         public string StreetName;
         public int HouseNumber;
         public Address(string streetName, int houseNumber)
         {
-            if(streetName == null)
+            if (streetName == null)
             {
                 throw new ArgumentNullException(paramName: nameof(streetName));
             }
             StreetName = streetName;
             HouseNumber = houseNumber;
         }
-        /// <summary>
-        /// Deep Copu!
-        /// </summary>
-        /// <returns></returns>
-        public object Clone()
+        public Address(Address otherAddress)
         {
-            return new Address(StreetName, HouseNumber);
+            StreetName = otherAddress.StreetName;
+            HouseNumber = otherAddress.HouseNumber;
         }
-
         public override string ToString()
         {
             return $"{nameof(StreetName)}: {StreetName}, {nameof(HouseNumber)}: {HouseNumber}";
