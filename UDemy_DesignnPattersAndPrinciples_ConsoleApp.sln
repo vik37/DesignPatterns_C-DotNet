@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactrotyDP_UdemyDesigPatter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryDP_Homework", "FactoryDP_Homework\FactoryDP_Homework.csproj", "{5D5E2FB7-5EEE-4624-BA79-C2263CEFC2B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDP_Methods", "TestDP_Methods\TestDP_Methods.csproj", "{11F62636-DF08-456C-BCD8-263887B9F983}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDP_Methods", "TestDP_Methods\TestDP_Methods.csproj", "{11F62636-DF08-456C-BCD8-263887B9F983}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeDP_UdemyDesignPatterns_ConsoleApp", "PrototypeDP_UdemyDesignPatterns_ConsoleApp\PrototypeDP_UdemyDesignPatterns_ConsoleApp.csproj", "{BB5CB623-391A-4D75-8619-D6F41719ADEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{11F62636-DF08-456C-BCD8-263887B9F983}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11F62636-DF08-456C-BCD8-263887B9F983}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11F62636-DF08-456C-BCD8-263887B9F983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB5CB623-391A-4D75-8619-D6F41719ADEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5CB623-391A-4D75-8619-D6F41719ADEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5CB623-391A-4D75-8619-D6F41719ADEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5CB623-391A-4D75-8619-D6F41719ADEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
