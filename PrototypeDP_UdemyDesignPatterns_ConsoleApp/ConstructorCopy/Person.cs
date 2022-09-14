@@ -1,5 +1,4 @@
-﻿using PrototypeDP_UdemyDesignPatterns_ConsoleApp.IClonableIsBad;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -27,12 +26,10 @@ namespace PrototypeDP_UdemyDesignPatterns_ConsoleApp.ConstructorCopy
             Names = other.Names;
             Address = new Address(other.Address);
         }
-
         public override string ToString()
         {
             return $"{nameof(Names)}: {string.Join(" ", Names)}, {nameof(Address)}: {Address}";
         }
-
         public Person DeepCopy()
         {
             return new Person(Names, Address.DeepCopy());
