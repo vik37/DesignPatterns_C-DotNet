@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PrototypeDP_UdemyDesignPatterns_ConsoleApp.Homework
 {
-    public interface IPrototype<T>
+    public interface IPrototypeDP<T>
     {
         T DeepCopy();
     }

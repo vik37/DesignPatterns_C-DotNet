@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PrototypeDP_UdemyDesignPatterns_ConsoleApp.Homework
 {
-    public class Point : IPrototype<Point>
+    public class Point : IPrototypeDP<Point>
     {
         public int X, Y;
 

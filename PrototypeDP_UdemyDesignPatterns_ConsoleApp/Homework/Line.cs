@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PrototypeDP_UdemyDesignPatterns_ConsoleApp.Homework
 {
-    public class Line : IPrototype<Line>
+    public class Line : IPrototypeDP<Line>
     {
         public Point Start, End;
         public Line() { }       
