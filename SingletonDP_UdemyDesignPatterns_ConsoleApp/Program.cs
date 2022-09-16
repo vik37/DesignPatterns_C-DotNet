@@ -1,4 +1,5 @@
-﻿using SingletonDP_UdemyDesignPatterns_ConsoleApp.Singleton_Implementation;
+﻿using SingletonDP_UdemyDesignPatterns_ConsoleApp.Monostate;
+using SingletonDP_UdemyDesignPatterns_ConsoleApp.Singleton_Implementation;
 using System;
 
 namespace SingletonDP_UdemyDesignPatterns_ConsoleApp
@@ -9,9 +10,19 @@ namespace SingletonDP_UdemyDesignPatterns_ConsoleApp
         {
             #region
             // Singleton Implementation
-            var db = SingletonDatabase.Instance;
-            string city = "Tokyo";
-            Console.WriteLine($"{city} has population {db.GetPopulation(city)}");
+            //var db = SingletonDatabase.Instance;
+            //string city = "Tokyo";
+            //Console.WriteLine($"{city} has population {db.GetPopulation(city)}");
+            #endregion
+
+            #region
+            // Monostate
+            var ceo = new CEO();
+            ceo.Name = "Adam Smith";
+            ceo.Age = 55;
+
+            var ceo2 = new CEO();
+            Console.WriteLine(ceo2);
 
             #endregion
             Console.ReadLine();
