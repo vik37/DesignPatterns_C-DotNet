@@ -1,4 +1,5 @@
-﻿using AdapterDP_UdemyDesignPatterns_ConsoleApp.VectorDemo;
+﻿using AdapterDP_UdemyDesignPatterns_ConsoleApp.GenericValueAdapter;
+using AdapterDP_UdemyDesignPatterns_ConsoleApp.VectorDemo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,9 +41,20 @@ namespace AdapterDP_UdemyDesignPatterns_ConsoleApp
         {
             #region
             // Vector\Raster Demo
-            Draw();
-            Draw();
+            //Draw();
+            //Draw();
+            #endregion
 
+            #region
+            // Generic Value Adapter
+            var v = new Vector2i(1,2);
+            v[0] = 0;
+            var vv = new Vector2i(3,2);
+            var result = v + vv;
+            Console.WriteLine(result);
+
+            Vector3f u = Vector3f.Create(3.5f, 2.2f, 1);
+            Console.WriteLine(u);
             #endregion
             Console.ReadLine();
         }
