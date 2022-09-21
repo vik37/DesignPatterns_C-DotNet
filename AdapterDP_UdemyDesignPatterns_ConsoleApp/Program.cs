@@ -1,4 +1,5 @@
-﻿using AdapterDP_UdemyDesignPatterns_ConsoleApp.AdapterInDependencyInjection;
+﻿using AdapterDP_UdemyDesignPatterns_ConsoleApp.AdapterHomework;
+using AdapterDP_UdemyDesignPatterns_ConsoleApp.AdapterInDependencyInjection;
 using AdapterDP_UdemyDesignPatterns_ConsoleApp.AdapterInDependencyInjection.Interfaces;
 using AdapterDP_UdemyDesignPatterns_ConsoleApp.GenericValueAdapter;
 using AdapterDP_UdemyDesignPatterns_ConsoleApp.VectorDemo;
@@ -65,26 +66,36 @@ namespace AdapterDP_UdemyDesignPatterns_ConsoleApp
 
             #region
             // Adapter with Aependency Injection (Autofac)
-            var cb = new ContainerBuilder();
-            cb.RegisterType<SaveCommand>().As<ICommand>()
-                .WithMetadata("Name","Save");
-            cb.RegisterType<OpenCommand>().As<ICommand>()
-                .WithMetadata("Name","Open");
+            //var cb = new ContainerBuilder();
+            //cb.RegisterType<SaveCommand>().As<ICommand>()
+            //    .WithMetadata("Name","Save");
+            //cb.RegisterType<OpenCommand>().As<ICommand>()
+            //    .WithMetadata("Name","Open");
             //cb.RegisterType<Button>();
             //cb.RegisterAdapter<ICommand, Button>(cmd => new Button(cmd));
-            cb.RegisterAdapter<Meta<ICommand>, Button>(cmd => 
-                new Button(cmd.Value, (string)cmd.Metadata["Name"])
-            );
-            cb.RegisterType<Editor>();
-            using(var c = cb.Build())
-            {
-                var editor = c.Resolve<Editor>();
-                //editor.ClickAll();
+            //cb.RegisterAdapter<Meta<ICommand>, Button>(cmd => 
+            //    new Button(cmd.Value, (string)cmd.Metadata["Name"])
+            //);
+            //cb.RegisterType<Editor>();
+            //using(var c = cb.Build())
+            //{
+            //    var editor = c.Resolve<Editor>();
+            //    //editor.ClickAll();
 
-                foreach (var btn in editor.Buttons)
-                {
-                    btn.Click();
-                }
+            //    foreach (var btn in editor.Buttons)
+            //    {
+            //        btn.Click();
+            //    }
+            //}
+            #endregion
+
+            #region
+            // Homework
+            Square square = new Square() { Side = 2 };
+            var str = new SquareToRectangleAdapter(square);
+            foreach (var item in str.SquarePoints())
+            {
+                Console.WriteLine(item);
             }
             #endregion
             Console.ReadLine();

@@ -51,7 +51,7 @@ namespace AdapterDP_UdemyDesignPatterns_ConsoleApp.VectorDemo
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
     }
 }
