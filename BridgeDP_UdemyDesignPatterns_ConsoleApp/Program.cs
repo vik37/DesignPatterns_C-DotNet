@@ -43,7 +43,6 @@ namespace BridgeDP_UdemyDesignPatterns_ConsoleApp
 
             #region
             // Bridge Design Pattern - Homework
-            //IRenderer renderer = new VectorSquare();
             var square = new Square(new VectorRenderer()).ToString();
             Console.WriteLine(square);
 
