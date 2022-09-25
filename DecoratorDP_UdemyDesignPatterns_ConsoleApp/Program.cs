@@ -1,4 +1,5 @@
 ﻿//using DecoratorDP_UdemyDesignPatterns_ConsoleApp.MultipleInheritanceWithInterfaces;
+using DecoratorDP_UdemyDesignPatterns_ConsoleApp.DynamicDecoratorComposition;
 using DecoratorDP_UdemyDesignPatterns_ConsoleApp.MultipleInheritanceWithDefaultInterface;
 using DecoratorDP_UdemyDesignPatterns_ConsoleApp.MultipleInheritanceWithDefaultInterface.Interfacec;
 using System;
@@ -20,15 +21,25 @@ namespace DecoratorDP_UdemyDesignPatterns_ConsoleApp
 
             #region
             // Multiple Inheritance With Default Interface
-            Dragon d = new Dragon() {Age=5 };
-            if(d is IBird bird)
-            {
-                bird.Fly();
-            }
-            if(d is ILizard lizard)
-            {
-                lizard.Crawl();
-            }
+            //Dragon d = new Dragon() {Age=5 };
+            //if(d is IBird bird)
+            //{
+            //    bird.Fly();
+            //}
+            //if(d is ILizard lizard)
+            //{
+            //    lizard.Crawl();
+            //}
+            #endregion
+
+            #region
+            // Dynamic Decorator Composition
+            var square = new Square(1.23f);
+            //Console.WriteLine(square.AsString());
+            var redSquare = new ColoredShape(square, "red");
+            Console.WriteLine(redSquare.AsString());
+            var redHalfTransperentSquare = new TransparentShape(redSquare, 50f);
+            Console.WriteLine(redHalfTransperentSquare.AsString()); 
             #endregion
             Console.ReadLine();
         }
