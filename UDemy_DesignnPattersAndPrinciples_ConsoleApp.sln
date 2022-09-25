@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdapterDP_UdemyDesignPatter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BridgeDP_UdemyDesignPatterns_ConsoleApp", "BridgeDP_UdemyDesignPatterns_ConsoleApp\BridgeDP_UdemyDesignPatterns_ConsoleApp.csproj", "{BDBD7BA9-F54A-478B-B954-FD1641F12126}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositeDP_UdemyDesignPatterns_ConsoleApp", "CompositeDP_UdemyDesignPatterns_ConsoleApp\CompositeDP_UdemyDesignPatterns_ConsoleApp.csproj", "{FEEE5032-9454-4630-A8EE-5DD908D5291A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompositeDP_UdemyDesignPatterns_ConsoleApp", "CompositeDP_UdemyDesignPatterns_ConsoleApp\CompositeDP_UdemyDesignPatterns_ConsoleApp.csproj", "{FEEE5032-9454-4630-A8EE-5DD908D5291A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorDP_UdemyDesignPatterns_ConsoleApp", "DecoratorDP_UdemyDesignPatterns_ConsoleApp\DecoratorDP_UdemyDesignPatterns_ConsoleApp.csproj", "{9F5F0AEF-716D-4314-94CA-97A1B1E93502}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{FEEE5032-9454-4630-A8EE-5DD908D5291A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEEE5032-9454-4630-A8EE-5DD908D5291A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEEE5032-9454-4630-A8EE-5DD908D5291A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F5F0AEF-716D-4314-94CA-97A1B1E93502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F5F0AEF-716D-4314-94CA-97A1B1E93502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F5F0AEF-716D-4314-94CA-97A1B1E93502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F5F0AEF-716D-4314-94CA-97A1B1E93502}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
