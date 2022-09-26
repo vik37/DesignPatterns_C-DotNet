@@ -1,5 +1,8 @@
 ﻿//using DecoratorDP_UdemyDesignPatterns_ConsoleApp.MultipleInheritanceWithInterfaces;
 //using DecoratorDP_UdemyDesignPatterns_ConsoleApp.DynamicDecoratorComposition;
+using Autofac;
+using DecoratorDP_UdemyDesignPatterns_ConsoleApp.DecoratorInDI;
+using DecoratorDP_UdemyDesignPatterns_ConsoleApp.DecoratorInDI.Interfaces;
 using DecoratorDP_UdemyDesignPatterns_ConsoleApp.DetectingDecoratorCycles;
 using DecoratorDP_UdemyDesignPatterns_ConsoleApp.DetectingDecoratorCycles.Dynamic;
 using DecoratorDP_UdemyDesignPatterns_ConsoleApp.MultipleInheritanceWithDefaultInterface;
@@ -46,13 +49,28 @@ namespace DecoratorDP_UdemyDesignPatterns_ConsoleApp
 
             #region
             // Detecting Decorator Cycles.
-            var circle = new Circle(2);
-            var colored1 = new ColoredShape(circle, "red");
-            var colored2 = new ColoredShape(circle, "blue");
+            //var circle = new Circle(2);
+            //var colored1 = new ColoredShape(circle, "red");
+            //var colored2 = new ColoredShape(circle, "blue");
 
-            Console.WriteLine(circle.AsString());
-            Console.WriteLine(colored1.AsString());
-            Console.WriteLine(colored2.AsString());
+            //Console.WriteLine(circle.AsString());
+            //Console.WriteLine(colored1.AsString());
+            //Console.WriteLine(colored2.AsString());
+            #endregion
+
+            #region
+            // Decorator in Dependency Injection
+            var cb = new ContainerBuilder();
+            cb.RegisterType<ReportingService>().Named<IReportingService>("reporting");
+            cb.RegisterDecorator<IReportingService>(
+                    (context, service) => new ReportingServiceWithLogging(service), "reporting"
+                );
+
+            using(var container = cb.Build())
+            {
+                var r = container.Resolve<IReportingService>();
+                r.Report();
+            }
             #endregion
             Console.ReadLine();
         }
