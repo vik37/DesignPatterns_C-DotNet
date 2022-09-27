@@ -13,12 +13,13 @@ namespace FlyweightDP_UdemyDesignPatterns_ConsoleApp
         
         static void Main(string[] args)
         {
-            #region
-            // Repeating User Names
+            
 
-            #endregion
+            
             Console.ReadLine();
         }
+        #region
+        // Repeating User Names
         [Test]
         public void TestUser()
         {
@@ -75,5 +76,6 @@ namespace FlyweightDP_UdemyDesignPatterns_ConsoleApp
                     .Select(i => (char)('a' + r.Next(26)))
                     .ToArray());
         }
+        #endregion
     }
 }
