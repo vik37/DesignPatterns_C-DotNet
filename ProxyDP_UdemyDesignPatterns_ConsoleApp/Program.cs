@@ -1,4 +1,5 @@
-﻿using ProxyDP_UdemyDesignPatterns_ConsoleApp.PropertyProxy;
+﻿//using ProxyDP_UdemyDesignPatterns_ConsoleApp.PropertyProxy;
+using ProxyDP_UdemyDesignPatterns_ConsoleApp.CompositeProxy;
 using ProxyDP_UdemyDesignPatterns_ConsoleApp.ProtectionProxy;
 using ProxyDP_UdemyDesignPatterns_ConsoleApp.ProtectionProxy.Interfaces;
 using ProxyDP_UdemyDesignPatterns_ConsoleApp.ValueProxy;
@@ -30,8 +31,25 @@ namespace ProxyDP_UdemyDesignPatterns_ConsoleApp
 
             #region
             // Value Proxy
-            Console.WriteLine(10f * 5.Percent());
-            Console.WriteLine(2.Percent() + 3.Percent()); //5%
+            //Console.WriteLine(10f * 5.Percent());
+            //Console.WriteLine(2.Percent() + 3.Percent()); //5%
+            #endregion
+
+            #region
+            // Composite Proxy SoA/AoS
+            // Combination of Proxy and Composite Design Patterns
+            
+            var creatures = new Creature[100]; // AoS = Array of Structures
+            foreach (Creature c in creatures)
+            {
+                c.X++;
+            }
+            
+            var creatures2 = new Creatures(100); // SoA = Structure of Arrays
+            foreach (Creatures.CreatureProxy c in creatures2)
+            {
+                c.X++;
+            }
             #endregion
             Console.ReadLine();
         }
