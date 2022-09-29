@@ -21,8 +21,10 @@ namespace ProxyDP_UdemyDesignPatterns_ConsoleApp
             c.Agility = 10; // c.set_agility(10) will not work;
                             // c.Agility = new Property<int>(10)
 
-            c.Agility = 10; 
+            c.Agility = 10;
             // If we assign value twice, we're only actually assigning once.
+            c.Letter = 'A';
+            c.Letter = 'B';
             #endregion
             Console.ReadLine();
         }
