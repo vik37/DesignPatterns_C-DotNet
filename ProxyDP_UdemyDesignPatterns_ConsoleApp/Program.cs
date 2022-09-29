@@ -38,18 +38,23 @@ namespace ProxyDP_UdemyDesignPatterns_ConsoleApp
             #region
             // Composite Proxy SoA/AoS
             // Combination of Proxy and Composite Design Patterns
-            
-            var creatures = new Creature[100]; // AoS = Array of Structures
-            foreach (Creature c in creatures)
-            {
-                c.X++;
-            }
-            
-            var creatures2 = new Creatures(100); // SoA = Structure of Arrays
-            foreach (Creatures.CreatureProxy c in creatures2)
-            {
-                c.X++;
-            }
+
+            //var creatures = new Creature[100]; // AoS = Array of Structures
+            //foreach (Creature c in creatures)
+            //{
+            //    c.X++;
+            //}
+
+            //var creatures2 = new Creatures(100); // SoA = Structure of Arrays
+            //foreach (Creatures.CreatureProxy c in creatures2)
+            //{
+            //    c.X++;
+            //}
+            #endregion
+
+            #region
+            // Composite Proxy With Array-Backed
+
             #endregion
             Console.ReadLine();
         }
