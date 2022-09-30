@@ -1,6 +1,10 @@
 ﻿//using ProxyDP_UdemyDesignPatterns_ConsoleApp.PropertyProxy;
 using ProxyDP_UdemyDesignPatterns_ConsoleApp.CompositeProxy;
+using ProxyDP_UdemyDesignPatterns_ConsoleApp.DynamicProxyLogging;
+using ProxyDP_UdemyDesignPatterns_ConsoleApp.DynamicProxyLogging.Interfaces;
+using ProxyDP_UdemyDesignPatterns_ConsoleApp.DynamicProxyLogging.Logger;
 using ProxyDP_UdemyDesignPatterns_ConsoleApp.ProtectionProxy;
+using ImpromptuInterface;
 using ProxyDP_UdemyDesignPatterns_ConsoleApp.ProtectionProxy.Interfaces;
 using ProxyDP_UdemyDesignPatterns_ConsoleApp.ValueProxy;
 using System;
@@ -53,8 +57,13 @@ namespace ProxyDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region
-            // Composite Proxy With Array-Backed
-
+            // DynamicProxyLogging
+            // var ba = new BankAccount();
+            var ba = Log<BankAccount>.As<IBankAccount>();
+            ba.Deposit(100);
+            ba.Withdraw(50);
+            Console.WriteLine(ba);
+            //Console.WriteLine(ba.Info);
             #endregion
             Console.ReadLine();
         }
