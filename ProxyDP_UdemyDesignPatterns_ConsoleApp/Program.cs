@@ -9,6 +9,8 @@ using ProxyDP_UdemyDesignPatterns_ConsoleApp.ProtectionProxy.Interfaces;
 using ProxyDP_UdemyDesignPatterns_ConsoleApp.ValueProxy;
 using System;
 using ProxyDP_UdemyDesignPatterns_ConsoleApp.Task;
+using ProxyDP_UdemyDesignPatterns_ConsoleApp.BitFragging;
+using System.Linq;
 
 namespace ProxyDP_UdemyDesignPatterns_ConsoleApp
 {
@@ -63,12 +65,36 @@ namespace ProxyDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Task
-            Person p1 = new Person();
-            p1.Age = 17;
-            var rp = new ResponsiblePerson(p1);
-            Console.WriteLine(rp.Drive());
-            Console.WriteLine(rp.Drink());
-            Console.WriteLine(rp.DrinkAndDrive());
+            //Person p1 = new Person();
+            //p1.Age = 17;
+            //var rp = new ResponsiblePerson(p1);
+            //Console.WriteLine(rp.Drive());
+            //Console.WriteLine(rp.Drink());
+            //Console.WriteLine(rp.DrinkAndDrive());
+            #endregion
+
+            #region Bit Fragging
+            // 1-3-5+7
+            // 0 1 2 ... 10
+            var numbers = new[] { 1, 3, 5, 7 };
+            int numberOfOps = numbers.Length - 1;
+
+            for(int result = 0;result <= 10; ++result)
+            {
+                for(var key = 0UL;key < (1UL << 2 * numberOfOps); ++key)
+                {
+                    var tbs = new TwoBitSet(key);
+                    var ops = Enumerable.Range(0,numberOfOps)
+                                .Select(i => tbs[i]).Cast<Op>().ToArray();
+                    var problem = new Problem(numbers, ops);
+                    if(problem.Eval() == result)
+                    {
+                        Console.WriteLine($"{new Problem(numbers, ops)} = {result}");
+                        break;
+                    }
+
+                }
+            }
             #endregion
             Console.ReadLine();
         }
