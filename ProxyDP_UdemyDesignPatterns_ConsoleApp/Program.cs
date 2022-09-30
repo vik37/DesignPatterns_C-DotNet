@@ -8,6 +8,7 @@ using ImpromptuInterface;
 using ProxyDP_UdemyDesignPatterns_ConsoleApp.ProtectionProxy.Interfaces;
 using ProxyDP_UdemyDesignPatterns_ConsoleApp.ValueProxy;
 using System;
+using ProxyDP_UdemyDesignPatterns_ConsoleApp.Task;
 
 namespace ProxyDP_UdemyDesignPatterns_ConsoleApp
 {
@@ -15,14 +16,12 @@ namespace ProxyDP_UdemyDesignPatterns_ConsoleApp
     {
         static void Main(string[] args)
         {
-            #region
-            // Protection Proxy
+            #region Protection Proxy
             //ICar car = new CarProxy(new Driver(12));
             //car.Drive();
             #endregion
 
-            #region
-            // Property Proxy
+            #region Property Proxy
             //var c = new Creature();
             //c.Agility = 10; // c.set_agility(10) will not work;
             // c.Agility = new Property<int>(10)
@@ -33,14 +32,12 @@ namespace ProxyDP_UdemyDesignPatterns_ConsoleApp
             //c.Letter = 'B';
             #endregion
 
-            #region
-            // Value Proxy
+            #region Value Proxy
             //Console.WriteLine(10f * 5.Percent());
             //Console.WriteLine(2.Percent() + 3.Percent()); //5%
             #endregion
 
-            #region
-            // Composite Proxy SoA/AoS
+            #region Composite Proxy SoA/AoS
             // Combination of Proxy and Composite Design Patterns
 
             //var creatures = new Creature[100]; // AoS = Array of Structures
@@ -56,14 +53,22 @@ namespace ProxyDP_UdemyDesignPatterns_ConsoleApp
             //}
             #endregion
 
-            #region
-            // DynamicProxyLogging
+            #region Dynamic Proxy Logging 
             // var ba = new BankAccount();
-            var ba = Log<BankAccount>.As<IBankAccount>();
-            ba.Deposit(100);
-            ba.Withdraw(50);
-            Console.WriteLine(ba);
+            //var ba = Log<BankAccount>.As<IBankAccount>();
+            //ba.Deposit(100);
+            //ba.Withdraw(50);
+            //Console.WriteLine(ba);
             //Console.WriteLine(ba.Info);
+            #endregion
+
+            #region Task
+            Person p1 = new Person();
+            p1.Age = 17;
+            var rp = new ResponsiblePerson(p1);
+            Console.WriteLine(rp.Drive());
+            Console.WriteLine(rp.Drink());
+            Console.WriteLine(rp.DrinkAndDrive());
             #endregion
             Console.ReadLine();
         }
