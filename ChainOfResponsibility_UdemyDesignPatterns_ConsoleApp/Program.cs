@@ -1,5 +1,6 @@
 ﻿//using ChainOfResponsibility_UdemyDesignPatterns_ConsoleApp.MethodChain;
-using ChainOfResponsibility_UdemyDesignPatterns_ConsoleApp.BrokenChain;
+//using ChainOfResponsibility_UdemyDesignPatterns_ConsoleApp.BrokenChain;
+using ChainOfResponsibility_UdemyDesignPatterns_ConsoleApp.Task;
 using System;
 
 namespace ChainOfResponsibility_UdemyDesignPatterns_ConsoleApp
@@ -22,18 +23,33 @@ namespace ChainOfResponsibility_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Broken Chain
+            //var game = new Game();
+            //var goblin = new Creature(game, "Goblin", 2, 2);
+            //Console.WriteLine(goblin);
+            //using(new DoubleAttackModifier(game, goblin))
+            //{
+            //    Console.WriteLine(goblin);
+            //    using(new IncreaseModifier(game, goblin))
+            //    {
+            //        Console.WriteLine(goblin);
+            //    }
+            //}
+            //Console.WriteLine(goblin);
+            #endregion
+
+            #region Task
             var game = new Game();
-            var goblin = new Creature(game, "Goblin", 2, 2);
-            Console.WriteLine(goblin);
-            using(new DoubleAttackModifier(game, goblin))
+            var goblin = new Goblin(game);
+            game.Creatures.Add(goblin);
+            var goblin2 = new Goblin(game);
+            game.Creatures.Add(goblin2);
+            var GoblinKing = new GoblinKing(game);
+            game.Creatures.Add(GoblinKing);
+             
+            foreach (var creatures in game.Creatures)
             {
-                Console.WriteLine(goblin);
-                using(new IncreaseModifier(game, goblin))
-                {
-                    Console.WriteLine(goblin);
-                }
+                Console.WriteLine(creatures);
             }
-            Console.WriteLine(goblin);
             #endregion
             Console.ReadLine();
         }
