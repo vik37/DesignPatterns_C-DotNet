@@ -1,4 +1,5 @@
 ﻿//using CommandDP_UdemyDesignPatterns_ConsoleApp.Command;
+using CommandDP_UdemyDesignPatterns_ConsoleApp.CommandDP_Task;
 using CommandDP_UdemyDesignPatterns_ConsoleApp.CompositeCommand;
 using System;
 using System.Collections.Generic;
@@ -32,18 +33,35 @@ namespace CommandDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Composite and Command dp
-            var from = new BankAccount();
-            from.Deposite(100);
-            var to = new BankAccount();
+            //var from = new BankAccount();
+            //from.Deposite(100);
+            //var to = new BankAccount();
 
-            var mtc = new MoneyTransferCommand(from, to, 1000);
-            mtc.Call();
-            Console.WriteLine(from);
-            Console.WriteLine(to);
-            Console.WriteLine("------------  changed his mind about the transfer  :)  ------------");
-            mtc.Undo();
-            Console.WriteLine(from);
-            Console.WriteLine(to);
+            //var mtc = new MoneyTransferCommand(from, to, 100);
+            //mtc.Call();
+            //Console.WriteLine(from);
+            //Console.WriteLine(to);
+            //Console.WriteLine("------------  changed his mind about the transfer  :)  ------------");
+            //mtc.Undo();
+            //Console.WriteLine(from);
+            //Console.WriteLine(to);
+            #endregion
+
+            #region Command DP Task
+            var account = new Account();
+            var command1 = new BankCommand
+            {
+                Amount = 100,
+                TheAction = BankCommand.Action.Deposit
+            };
+            var command2 = new BankCommand
+            {
+                Amount = 20,
+                TheAction = BankCommand.Action.Withdraw
+            };
+            account.Process(command1);
+            account.Process(command2);
+            Console.WriteLine(account);
             #endregion
             Console.ReadLine();
         }
