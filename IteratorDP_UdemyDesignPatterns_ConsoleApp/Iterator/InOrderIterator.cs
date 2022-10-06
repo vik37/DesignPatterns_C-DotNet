@@ -48,7 +48,8 @@ namespace IteratorDP_UdemyDesignPatterns_ConsoleApp.Iterator
         }
         public void Reset()
         {
-
+            Current = root;
+            yealdedStart = false;
         }
     }
 }
