@@ -1,5 +1,6 @@
 ﻿using IteratorDP_UdemyDesignPatterns_ConsoleApp.Iterator;
 using System;
+using System.Linq;
 
 namespace IteratorDP_UdemyDesignPatterns_ConsoleApp
 {
@@ -16,6 +17,9 @@ namespace IteratorDP_UdemyDesignPatterns_ConsoleApp
                 Console.Write(",");
             }
             Console.WriteLine();
+
+            var tree = new BinaryTree<int>(root);
+            Console.WriteLine(string.Join(",",tree.InOrder.Select(x => x.Value)));
             #endregion
             Console.ReadLine();
         }
