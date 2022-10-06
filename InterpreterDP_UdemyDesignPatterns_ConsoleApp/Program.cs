@@ -1,5 +1,6 @@
 ﻿//using InterpreterDP_UdemyDesignPatterns_ConsoleApp.HandmadeInterpreted;
-using InterpreterDP_UdemyDesignPatterns_ConsoleApp.Task;
+//using InterpreterDP_UdemyDesignPatterns_ConsoleApp.Task;
+using InterpreterDP_UdemyDesignPatterns_ConsoleApp.Task2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -114,14 +115,21 @@ namespace InterpreterDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Task
-            string one = "1+2+3";
-            string two = "1+2+xy";
-            string three = "10-2-x";
-            var proccess = new ExpressionProcessor();
-            proccess.Variables.Add('x', 3);
-            proccess.Variables.Add('y', 23);
-            int n = proccess.Calculate(three);
-            Console.WriteLine(n);
+            //string one = "1+2+3";
+            //string two = "1+2+xy";
+            //string three = "10-2-x";
+            //var proccess = new ExpressionProcessor();
+            //proccess.Variables.Add('x', 3);
+            //proccess.Variables.Add('y', 23);
+            //int n = proccess.Calculate(three);
+            //Console.WriteLine(n);
+            #endregion
+
+            #region Task 2
+            var ep = new ExpressionProcessor();
+            ep.Variables.Add('x', 5);
+            int result = ep.Calculate("1");
+            Console.WriteLine(result);
             #endregion
             Console.ReadLine();
         }
