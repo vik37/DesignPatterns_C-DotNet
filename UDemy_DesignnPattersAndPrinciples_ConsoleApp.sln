@@ -41,7 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterpreterDP_UdemyDesignPa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IteratorDP_UdemyDesignPatterns_ConsoleApp", "IteratorDP_UdemyDesignPatterns_ConsoleApp\IteratorDP_UdemyDesignPatterns_ConsoleApp.csproj", "{C42D3D6A-96FC-4383-8334-6D63EDEED7B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorDP_UdemyDesignPatterns_ConsoleApp", "MediatorDP_UdemyDesignPatterns_ConsoleApp\MediatorDP_UdemyDesignPatterns_ConsoleApp.csproj", "{0B81DFF7-B37C-44DE-AABA-A1ACC6135E02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatorDP_UdemyDesignPatterns_ConsoleApp", "MediatorDP_UdemyDesignPatterns_ConsoleApp\MediatorDP_UdemyDesignPatterns_ConsoleApp.csproj", "{0B81DFF7-B37C-44DE-AABA-A1ACC6135E02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MementoDP_UdemyDesignPatterns_ConsoleApp", "MementoDP_UdemyDesignPatterns_ConsoleApp\MementoDP_UdemyDesignPatterns_ConsoleApp.csproj", "{66BB4409-5986-4BBD-9904-CC564E826F19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +131,10 @@ Global
 		{0B81DFF7-B37C-44DE-AABA-A1ACC6135E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B81DFF7-B37C-44DE-AABA-A1ACC6135E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B81DFF7-B37C-44DE-AABA-A1ACC6135E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66BB4409-5986-4BBD-9904-CC564E826F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66BB4409-5986-4BBD-9904-CC564E826F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66BB4409-5986-4BBD-9904-CC564E826F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66BB4409-5986-4BBD-9904-CC564E826F19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
