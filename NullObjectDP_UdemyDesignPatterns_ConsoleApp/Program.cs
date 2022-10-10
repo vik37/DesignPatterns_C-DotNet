@@ -1,5 +1,6 @@
 ﻿using Autofac;
-using NullObjectDP_UdemyDesignPatterns_ConsoleApp.NullObjectSingleton;
+using NullObjectDP_UdemyDesignPatterns_ConsoleApp.Task;
+//using NullObjectDP_UdemyDesignPatterns_ConsoleApp.NullObjectSingleton;
 //using NullObjectDP_UdemyDesignPatterns_ConsoleApp.NullObject_Demo;
 using System;
 
@@ -21,7 +22,10 @@ namespace NullObjectDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Null object Singleton
-            ILog log = ILog.Null;
+            //ILog log = ILog.Null;
+            ILog log = new NullLog();
+            var acc = new Account(log);
+            acc.SomeOperation();
 
             #endregion
             Console.ReadLine();
