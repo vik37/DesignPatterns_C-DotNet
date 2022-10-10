@@ -1,5 +1,6 @@
 ﻿using Autofac;
-using NullObjectDP_UdemyDesignPatterns_ConsoleApp.NullObject_Demo;
+using NullObjectDP_UdemyDesignPatterns_ConsoleApp.NullObjectSingleton;
+//using NullObjectDP_UdemyDesignPatterns_ConsoleApp.NullObject_Demo;
 using System;
 
 namespace NullObjectDP_UdemyDesignPatterns_ConsoleApp
@@ -9,14 +10,19 @@ namespace NullObjectDP_UdemyDesignPatterns_ConsoleApp
         static void Main(string[] args)
         {
             #region Null Object
-            var cb = new ContainerBuilder();
-            cb.RegisterType<BankAccount>();
-            cb.RegisterType<NullLog>().As<ILog>();
-            using(var c = cb.Build())
-            {
-                var ba = c.Resolve<BankAccount>();
-                ba.Deposit(100);
-            }
+            //var cb = new ContainerBuilder();
+            //cb.RegisterType<BankAccount>();
+            //cb.RegisterType<NullLog>().As<ILog>();
+            //using(var c = cb.Build())
+            //{
+            //    var ba = c.Resolve<BankAccount>();
+            //    ba.Deposit(100);
+            //}
+            #endregion
+
+            #region Null object Singleton
+            ILog log = ILog.Null;
+
             #endregion
             Console.ReadLine();
         }
