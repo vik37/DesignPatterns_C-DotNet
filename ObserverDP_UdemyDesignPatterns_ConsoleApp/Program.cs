@@ -1,13 +1,15 @@
-﻿using ObserverDP_UdemyDesignPatterns_ConsoleApp.ObserverViaEventKeyword;
+﻿using ObserverDP_UdemyDesignPatterns_ConsoleApp.ObservableCollections;
+using ObserverDP_UdemyDesignPatterns_ConsoleApp.ObserverViaEventKeyword;
 using ObserverDP_UdemyDesignPatterns_ConsoleApp.ObserverViaSpecialInterfaces;
 using ObserverDP_UdemyDesignPatterns_ConsoleApp.WeakEventPattern;
 using System;
+using System.ComponentModel;
 
 namespace ObserverDP_UdemyDesignPatterns_ConsoleApp
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args)  // observer
         {
             #region Observer via 'event' Keyword
             //var person = new Person();
@@ -29,8 +31,22 @@ namespace ObserverDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Observer via Special Interfaces
-            new Observer();
-            
+            //new Observer();
+
+            #endregion
+
+            #region Observable Collections 
+
+            var market = new Market();
+            market.Prices.ListChanged += (sender, eventArgs) =>
+            {
+                if(eventArgs.ListChangedType == ListChangedType.ItemAdded)
+                {
+                    float price = ((BindingList<float>)sender)[eventArgs.NewIndex];
+                    Console.WriteLine($"Binding list got a price {price}");
+                }
+            };
+            market.AddPrice(123);
             #endregion
             Console.ReadLine();
         }
