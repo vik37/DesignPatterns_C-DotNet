@@ -1,4 +1,5 @@
 ﻿using ObserverDP_UdemyDesignPatterns_ConsoleApp.ObserverViaEventKeyword;
+using ObserverDP_UdemyDesignPatterns_ConsoleApp.ObserverViaSpecialInterfaces;
 using ObserverDP_UdemyDesignPatterns_ConsoleApp.WeakEventPattern;
 using System;
 
@@ -16,15 +17,20 @@ namespace ObserverDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Weak Event Pattern
-            var btn = new Button();
-            var window = new Window(btn);
-            var windowRef = new WeakReference(window);
-            btn.Fired();
+            //var btn = new Button();
+            //var window = new Window(btn);
+            //var windowRef = new WeakReference(window);
+            //btn.Fired();
 
-            Console.WriteLine("Setting window to null");
-            window = null;
-            FireGC();
-            Console.WriteLine($"Is the window alive after GC? {windowRef.IsAlive}");
+            //Console.WriteLine("Setting window to null");
+            //window = null;
+            //FireGC();
+            //Console.WriteLine($"Is the window alive after GC? {windowRef.IsAlive}");
+            #endregion
+
+            #region Observer via Special Interfaces
+            new Observer();
+            
             #endregion
             Console.ReadLine();
         }
