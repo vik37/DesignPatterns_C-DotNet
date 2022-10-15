@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ChainOfResponsibility_UdemyDesignPatterns_ConsoleApp\ChainOfResponsibility_UdemyDesignPatterns_ConsoleApp.csproj" />
+    <ProjectReference Include="..\ObserverDP_UdemyDesignPatterns_ConsoleApp\ObserverDP_UdemyDesignPatterns_ConsoleApp.csproj" />
     <ProjectReference Include="..\PrototypeDP_UdemyDesignPatterns_ConsoleApp\PrototypeDP_UdemyDesignPatterns_ConsoleApp.csproj" />
     <ProjectReference Include="..\SingletonDP_UdemyDesignPatterns_ConsoleApp\SingletonDP_UdemyDesignPatterns_ConsoleApp.csproj" />
   </ItemGroup>
