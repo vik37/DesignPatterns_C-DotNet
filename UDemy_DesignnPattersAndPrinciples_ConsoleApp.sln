@@ -49,7 +49,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NullObjectDP_UdemyDesignPat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverDP_UdemyDesignPatterns_ConsoleApp", "ObserverDP_UdemyDesignPatterns_ConsoleApp\ObserverDP_UdemyDesignPatterns_ConsoleApp.csproj", "{8A372D50-760A-46A5-A3C9-2450F00F212F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservableDPPart_DeclarativeEventSubscriptionsWithInterface", "ObservableDPPart_DeclarativeEventSubscriptionsWithInterface\ObservableDPPart_DeclarativeEventSubscriptionsWithInterface.csproj", "{7C62C8A5-92B3-4E5C-A111-221F15B8700B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObservableDPPart_DeclarativeEventSubscriptionsWithInterface", "ObservableDPPart_DeclarativeEventSubscriptionsWithInterface\ObservableDPPart_DeclarativeEventSubscriptionsWithInterface.csproj", "{7C62C8A5-92B3-4E5C-A111-221F15B8700B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateDP_UdemyDesignPatterns_ConsoleApp", "StateDP_UdemyDesignPatterns_ConsoleApp\StateDP_UdemyDesignPatterns_ConsoleApp.csproj", "{71593B6F-B34F-4CD9-80A1-FD8468B4AA8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +155,10 @@ Global
 		{7C62C8A5-92B3-4E5C-A111-221F15B8700B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C62C8A5-92B3-4E5C-A111-221F15B8700B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C62C8A5-92B3-4E5C-A111-221F15B8700B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71593B6F-B34F-4CD9-80A1-FD8468B4AA8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71593B6F-B34F-4CD9-80A1-FD8468B4AA8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71593B6F-B34F-4CD9-80A1-FD8468B4AA8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71593B6F-B34F-4CD9-80A1-FD8468B4AA8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
