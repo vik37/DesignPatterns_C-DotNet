@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="HandmadeStateMachine\" />
     <Folder Include="StateMachineStateless\" />
     <Folder Include="SwitchExpression\" />
     <Folder Include="Switch-baseStateMachine\" />
