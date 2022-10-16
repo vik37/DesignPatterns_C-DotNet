@@ -1,7 +1,9 @@
 ﻿//using StateDP_UdemyDesignPatterns_ConsoleApp.ClassicImplementation;
 //using StateDP_UdemyDesignPatterns_ConsoleApp.HandmadeStateMachine.Enums;
 //using StateDP_UdemyDesignPatterns_ConsoleApp.Switch_baseStateMachine.Enums;
-using StateDP_UdemyDesignPatterns_ConsoleApp.SwitchExpression.Enums;
+// StateDP_UdemyDesignPatterns_ConsoleApp.SwitchExpression.Enums;
+using StateDP_UdemyDesignPatterns_ConsoleApp.StateMachineStateless.Enums;
+using Stateless;
 using System;
 using System.Collections.Generic;
 using System.Resources;
@@ -39,37 +41,37 @@ namespace StateDP_UdemyDesignPatterns_ConsoleApp
         #endregion
 
         #region Switch Expressions
-        static Chest Manipulate(Chest chest, Actions action, bool haveKey) =>
-            (chest, action, haveKey) switch
-            {
-                (Chest.Locked, Actions.Open, true) =>
-                    (chest, action, haveKey) switch
-                    {
-                        (Chest.Closed, Actions.Open, _) => Chest.Open,
-                        (Chest.Locked, Actions.Open, true) => Chest.Open,
-                        (Chest.Open, Actions.Close, true) => Chest.Locked,
-                        (Chest.Open, Actions.Close, false) => Chest.Closed,
-                        _ => chest
-                    }
-            };
-        static Chest Manipulate2(Chest chest,
-        Actions action, bool haveKey)
-        {
-            switch (chest, action, haveKey)
-            {
-                case (Chest.Closed, Actions.Open, _):
-                    return Chest.Open;
-                case (Chest.Locked, Actions.Open, true):
-                    return Chest.Open;
-                case (Chest.Open, Actions.Close, true):
-                    return Chest.Locked;
-                case (Chest.Open, Actions.Close, false):
-                    return Chest.Closed;
-                default:
-                    Console.WriteLine("Chest unchanged");
-                    return chest;
-            }
-        }
+        //static Chest Manipulate(Chest chest, Actions action, bool haveKey) =>
+        //    (chest, action, haveKey) switch
+        //    {
+        //        (Chest.Locked, Actions.Open, true) =>
+        //            (chest, action, haveKey) switch
+        //            {
+        //                (Chest.Closed, Actions.Open, _) => Chest.Open,
+        //                (Chest.Locked, Actions.Open, true) => Chest.Open,
+        //                (Chest.Open, Actions.Close, true) => Chest.Locked,
+        //                (Chest.Open, Actions.Close, false) => Chest.Closed,
+        //                _ => chest
+        //            }
+        //    };
+        //static Chest Manipulate2(Chest chest,
+        //Actions action, bool haveKey)
+        //{
+        //    switch (chest, action, haveKey)
+        //    {
+        //        case (Chest.Closed, Actions.Open, _):
+        //            return Chest.Open;
+        //        case (Chest.Locked, Actions.Open, true):
+        //            return Chest.Open;
+        //        case (Chest.Open, Actions.Close, true):
+        //            return Chest.Locked;
+        //        case (Chest.Open, Actions.Close, false):
+        //            return Chest.Closed;
+        //        default:
+        //            Console.WriteLine("Chest unchanged");
+        //            return chest;
+        //    }
+        //}
         #endregion
         static void Main(string[] args)
         {
@@ -148,19 +150,40 @@ namespace StateDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Switch Expressions
-            Chest chest = Chest.Locked;
-            Console.WriteLine($"Chest is {chest}");
+            //Chest chest = Chest.Locked;
+            //Console.WriteLine($"Chest is {chest}");
 
-            chest = Manipulate(chest, Actions.Open, true);
-            Console.WriteLine($"Chest is {chest}");
+            //chest = Manipulate(chest, Actions.Open, true);
+            //Console.WriteLine($"Chest is {chest}");
 
-            chest = Manipulate(chest, Actions.Close, false);
-            Console.WriteLine($"Chest is {chest}");
+            //chest = Manipulate(chest, Actions.Close, false);
+            //Console.WriteLine($"Chest is {chest}");
 
-            chest = Manipulate(chest, Actions.Close, false);
-            Console.WriteLine($"Chest is {chest}");
+            //chest = Manipulate(chest, Actions.Close, false);
+            //Console.WriteLine($"Chest is {chest}");
+            #endregion
+
+            #region State Machine With Stateless (package)
+            var machine = new StateMachine<Health, Activity>(Health.NonReproductive);
+            machine.Configure(Health.NonReproductive)
+                .Permit(Activity.ReachPuberty, Health.Reproductive);
+            machine.Configure(Health.Reproductive)
+                .Permit(Activity.Historectomy, Health.NonReproductive)
+                .PermitIf(Activity.HaveUnprotectedSex, Health.Pregnant,
+              () => ParentsNotWatching);
+            machine.Configure(Health.Pregnant)
+                  .Permit(Activity.GiveBirth, Health.Reproductive)
+                  .Permit(Activity.HaveAbortion, Health.Reproductive);
+
             #endregion
             Console.ReadLine();
         }
+        #region State Machine With Stateless (package)
+        public static bool ParentsNotWatching
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
+        #endregion
     }
 }
