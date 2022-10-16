@@ -3,7 +3,8 @@
 //using StateDP_UdemyDesignPatterns_ConsoleApp.Switch_baseStateMachine.Enums;
 // StateDP_UdemyDesignPatterns_ConsoleApp.SwitchExpression.Enums;
 //using StateDP_UdemyDesignPatterns_ConsoleApp.StateMachineStateless.Enums;
-using StateDP_UdemyDesignPatterns_ConsoleApp.Task;
+//using StateDP_UdemyDesignPatterns_ConsoleApp.Task;
+using StateDP_UdemyDesignPatterns_ConsoleApp.Task_Solution2;
 using Stateless;
 using System;
 using System.Collections.Generic;
