@@ -2,7 +2,8 @@
 //using StateDP_UdemyDesignPatterns_ConsoleApp.HandmadeStateMachine.Enums;
 //using StateDP_UdemyDesignPatterns_ConsoleApp.Switch_baseStateMachine.Enums;
 // StateDP_UdemyDesignPatterns_ConsoleApp.SwitchExpression.Enums;
-using StateDP_UdemyDesignPatterns_ConsoleApp.StateMachineStateless.Enums;
+//using StateDP_UdemyDesignPatterns_ConsoleApp.StateMachineStateless.Enums;
+using StateDP_UdemyDesignPatterns_ConsoleApp.Task;
 using Stateless;
 using System;
 using System.Collections.Generic;
@@ -164,17 +165,32 @@ namespace StateDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region State Machine With Stateless (package)
-            var machine = new StateMachine<Health, Activity>(Health.NonReproductive);
-            machine.Configure(Health.NonReproductive)
-                .Permit(Activity.ReachPuberty, Health.Reproductive);
-            machine.Configure(Health.Reproductive)
-                .Permit(Activity.Historectomy, Health.NonReproductive)
-                .PermitIf(Activity.HaveUnprotectedSex, Health.Pregnant,
-              () => ParentsNotWatching);
-            machine.Configure(Health.Pregnant)
-                  .Permit(Activity.GiveBirth, Health.Reproductive)
-                  .Permit(Activity.HaveAbortion, Health.Reproductive);
+            //var machine = new StateMachine<Health, Activity>(Health.NonReproductive);
+            //machine.Configure(Health.NonReproductive)
+            //    .Permit(Activity.ReachPuberty, Health.Reproductive);
+            //machine.Configure(Health.Reproductive)
+            //    .Permit(Activity.Historectomy, Health.NonReproductive)
+            //    .PermitIf(Activity.HaveUnprotectedSex, Health.Pregnant,
+            //  () => ParentsNotWatching);
+            //machine.Configure(Health.Pregnant)
+            //      .Permit(Activity.GiveBirth, Health.Reproductive)
+            //      .Permit(Activity.HaveAbortion, Health.Reproductive);
 
+            #endregion
+
+            #region Task
+            var cl = new CombinationLock(new[] {1,2,3,4,5});
+            Console.WriteLine(cl.Status);
+            cl.EnterDigit(1);
+            Console.WriteLine(cl.Status);
+            cl.EnterDigit(2);
+            Console.WriteLine(cl.Status);
+            cl.EnterDigit(3);
+            Console.WriteLine(cl.Status);
+            cl.EnterDigit(4);
+            Console.WriteLine(cl.Status);
+            cl.EnterDigit(5);
+            Console.WriteLine(cl.Status);
             #endregion
             Console.ReadLine();
         }
