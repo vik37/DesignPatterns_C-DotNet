@@ -8,7 +8,6 @@
   <ItemGroup>
     <Folder Include="StateMachineStateless\" />
     <Folder Include="SwitchExpression\" />
-    <Folder Include="Switch-baseStateMachine\" />
   </ItemGroup>
 
 </Project>
