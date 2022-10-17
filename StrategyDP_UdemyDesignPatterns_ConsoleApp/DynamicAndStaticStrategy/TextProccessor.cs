@@ -6,24 +6,31 @@ using System.Text;
 
 namespace StrategyDP_UdemyDesignPatterns_ConsoleApp.DynamicAndStaticStrategy
 {
-    public class TextProccessor
+    public class TextProccessor<LS> where LS : IListStrategy, new()  //<LS> its part of static strategy
     {
         private StringBuilder sb = new StringBuilder();
-        private IListStrategy listStrategy;
-        public void SetOutpuFormat(OutputFormat format)
-        {
-            switch (format)
-            {
-                case OutputFormat.Markdown:
-                    listStrategy = new MarkdownListStrategy();
-                    break;
-                case OutputFormat.Html:
-                    listStrategy = new HtmlListStrategy();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(format), format, null);
-            }
-        }
+        #region Static Strategy
+        private IListStrategy listStrategy = new LS();
+        #endregion
+
+        #region Dinamyc Strategy
+        //private IListStrategy listStrategy;
+        //public void SetOutpuFormat(OutputFormat format)
+        //{
+        //    switch (format)
+        //    {
+        //        case OutputFormat.Markdown:
+        //            listStrategy = new MarkdownListStrategy();
+        //            break;
+        //        case OutputFormat.Html:
+        //            listStrategy = new HtmlListStrategy();
+        //            break;
+        //        default:
+        //            throw new ArgumentOutOfRangeException(nameof(format), format, null);
+        //    }
+        //}
+        #endregion
+
         public void AppendList(IEnumerable<string> items)
         {
             listStrategy.Start(sb);
