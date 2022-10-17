@@ -53,7 +53,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObservableDPPart_Declarativ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StateDP_UdemyDesignPatterns_ConsoleApp", "StateDP_UdemyDesignPatterns_ConsoleApp\StateDP_UdemyDesignPatterns_ConsoleApp.csproj", "{71593B6F-B34F-4CD9-80A1-FD8468B4AA8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyDP_UdemyDesignPatterns_ConsoleApp", "StrategyDP_UdemyDesignPatterns_ConsoleApp\StrategyDP_UdemyDesignPatterns_ConsoleApp.csproj", "{672137AE-10D5-4550-A430-9E9571C1D322}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrategyDP_UdemyDesignPatterns_ConsoleApp", "StrategyDP_UdemyDesignPatterns_ConsoleApp\StrategyDP_UdemyDesignPatterns_ConsoleApp.csproj", "{672137AE-10D5-4550-A430-9E9571C1D322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TamplateMethodDP_UdemyDesignPatterns_ConsoleApp", "TamplateMethodDP_UdemyDesignPatterns_ConsoleApp\TamplateMethodDP_UdemyDesignPatterns_ConsoleApp.csproj", "{9C480B96-515A-4D4E-982C-DDF6E4AE1CC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +167,10 @@ Global
 		{672137AE-10D5-4550-A430-9E9571C1D322}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{672137AE-10D5-4550-A430-9E9571C1D322}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{672137AE-10D5-4550-A430-9E9571C1D322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C480B96-515A-4D4E-982C-DDF6E4AE1CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C480B96-515A-4D4E-982C-DDF6E4AE1CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C480B96-515A-4D4E-982C-DDF6E4AE1CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C480B96-515A-4D4E-982C-DDF6E4AE1CC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
