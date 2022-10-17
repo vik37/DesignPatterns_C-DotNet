@@ -1,6 +1,8 @@
 ﻿using StrategyDP_UdemyDesignPatterns_ConsoleApp.DynamicAndStaticStrategy;
 using StrategyDP_UdemyDesignPatterns_ConsoleApp.DynamicAndStaticStrategy.Enums;
 using StrategyDP_UdemyDesignPatterns_ConsoleApp.EqualityAndComparation;
+using StrategyDP_UdemyDesignPatterns_ConsoleApp.Task;
+using StrategyDP_UdemyDesignPatterns_ConsoleApp.Task.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -33,18 +35,25 @@ namespace StrategyDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Equality and Comparation Strategies
-            var people = new List<Person>();
+            //var people = new List<Person>();
 
-            people.Sort();  // default strategy
+            //people.Sort();  // default strategy
 
             //people.Sort((x,y) => x.Name.CompareTo(y.Name));  // strategy by lambda
-            people.Sort(Person.NameComparer);
+            //people.Sort(Person.NameComparer);
 
             // Strategy using by Dot Net Framework. 
             #endregion
 
             #region Task
-
+            IDiscriminantStrategy ordinaryStrategy = new OrdinaryDiscriminantStrategy();
+            var solver = new QuadraticEquationSolver(ordinaryStrategy);
+            var result = solver.Solve(1, 4, 5);
+            Console.WriteLine(result);
+            var realStrategy = new RealDiscriminantStrategy();
+            solver = new QuadraticEquationSolver(realStrategy);
+            result = solver.Solve(1, -4, 5);
+            Console.WriteLine(result);
             #endregion
             Console.ReadLine();
         }
