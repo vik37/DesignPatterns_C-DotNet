@@ -16,9 +16,9 @@ namespace TamplateMethodDP_UdemyDesignPatterns_ConsoleApp.TemplateMethod
         }
         protected int currentPlayer;
         protected readonly int numberOfPlayer;
-        protected Game(int numberOfPlaters)
+        protected Game(int numberOfPlayers)
         {
-            this.numberOfPlayer = numberOfPlaters;
+            this.numberOfPlayer = numberOfPlayers;
         }
 
         protected abstract void Start();
