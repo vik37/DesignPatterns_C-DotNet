@@ -6,9 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="FunctionalTemplateMethod\" />
     <Folder Include="diagram\" />
-    <Folder Include="Task\" />
   </ItemGroup>
 
 </Project>

@@ -10,7 +10,6 @@ namespace StrategyDP_UdemyDesignPatterns_ConsoleApp.Task
         public double CalculateDiscriminant(double a, double b, double c)
         {
             double result = b * b - 4 * a * c;
-            double.
             return result > 0 ? result : double.NaN;
         }
     }

@@ -28,6 +28,7 @@
     <ProjectReference Include="..\SingletonDP_UdemyDesignPatterns_ConsoleApp\SingletonDP_UdemyDesignPatterns_ConsoleApp.csproj" />
     <ProjectReference Include="..\StateDP_UdemyDesignPatterns_ConsoleApp\StateDP_UdemyDesignPatterns_ConsoleApp.csproj" />
     <ProjectReference Include="..\StrategyDP_UdemyDesignPatterns_ConsoleApp\StrategyDP_UdemyDesignPatterns_ConsoleApp.csproj" />
+    <ProjectReference Include="..\TamplateMethodDP_UdemyDesignPatterns_ConsoleApp\TamplateMethodDP_UdemyDesignPatterns_ConsoleApp.csproj" />
   </ItemGroup>
 
 </Project>
