@@ -6,19 +6,19 @@ namespace VisitorDP_UdemyDesignPatterns_ConsoleApp.Visitor
 {
     public class AdditionExpression : Expression
     {
-        private Expression Left, Right;
+        private Expression left, right;
         public AdditionExpression(Expression left, Expression right)
         {
-            Left = left;
-            Right = right;
+            this.left = left;
+            this.right = right;
         }
 
         public override void Print(StringBuilder sb)
         {
             sb.Append("(");
-            Left.Print(sb);
+            left.Print(sb);
             sb.Append("+");
-            Right.Print(sb);
+            right.Print(sb);
             sb.Append(')');
         }
     }
