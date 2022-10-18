@@ -68,13 +68,13 @@ namespace TestDP_Methods.Prototype_Test
 
             PersonObjectComperer personObjectComperer = new PersonObjectComperer();
 
-            //Assert.Equal(john, john);
-            //Assert.True(personObjectComperer.Equals(john, john));
+            Assert.Equal(john, john);
+            Assert.True(personObjectComperer.Equals(john, john));
 
             // Testing 2 different objects - should not pass.
 
-            Assert.Equal(john, copy);
-            Assert.True(personObjectComperer.Equals(john, copy));
+            //Assert.Equal(john, copy);
+            //Assert.True(personObjectComperer.Equals(john, copy));
 
         }
 
