@@ -22,15 +22,31 @@ namespace VisitorDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Reflective Visitor
-            var sb = new StringBuilder();
+            //var sb = new StringBuilder();
+            //var e = new AdditionalExpression(
+            //    new DoubleExpression(1),
+            //    new AdditionalExpression(
+            //        new DoubleExpression(2),
+            //        new DoubleExpression(3))
+            //    );
+            //ExpressionPrinter.Print(e, sb);
+            //Console.WriteLine(sb);
+            #endregion
+
+            #region Classic Visitor (Double Dispatch)
             var e = new AdditionalExpression(
                 new DoubleExpression(1),
                 new AdditionalExpression(
                     new DoubleExpression(2),
                     new DoubleExpression(3))
                 );
-            ExpressionPrinter.Print(e, sb);
-            Console.WriteLine(sb);
+            var ep = new ExpressionPrinterForVisitor();
+            ep.Visit(e);
+            Console.WriteLine(ep);
+
+            var calc = new ExpressionCalculator();
+            calc.Visit(e);
+            Console.WriteLine($"{ep} = {calc.Result}");
             #endregion
             Console.ReadLine();
         }
