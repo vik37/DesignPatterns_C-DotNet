@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
-using VisitorDP_UdemyDesignPatterns_ConsoleApp.ReductionsAndTransformations;
+using VisitorDP_UdemyDesignPatterns_ConsoleApp.AcyclicVisitor;
+//using VisitorDP_UdemyDesignPatterns_ConsoleApp.ReductionsAndTransformations;
 //using VisitorDP_UdemyDesignPatterns_ConsoleApp.ReflectiveVisitor;
 //using VisitorDP_UdemyDesignPatterns_ConsoleApp.Visitor;
 
@@ -51,18 +52,29 @@ namespace VisitorDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Reductions and Transformations
-            var exp = new AdditionalExpression(
-                new DoubleExpression(1), new DoubleExpression(2));
-            var et = new EvaluationTransformer();
-            var result = exp.Reduce(et);
-            var pt = new PrintTransformer();
-            var text = exp.Reduce(pt);
-            Console.WriteLine($"{text} = {result}");
+            //var exp = new AdditionalExpression(
+            //    new DoubleExpression(1), new DoubleExpression(2));
+            //var et = new EvaluationTransformer();
+            //var result = exp.Reduce(et);
+            //var pt = new PrintTransformer();
+            //var text = exp.Reduce(pt);
+            //Console.WriteLine($"{text} = {result}");
 
-            var st = new SquareTransformer();
-            Expression newExp = exp.Reduce(st);
-            text = newExp.Reduce(pt);
-            Console.WriteLine($"{text}");
+            //var st = new SquareTransformer();
+            //Expression newExp = exp.Reduce(st);
+            //text = newExp.Reduce(pt);
+            //Console.WriteLine($"{text}");
+            #endregion
+
+            #region Acyclic Visitor
+            var e = new AdditionExpression(
+                left: new DoubleExpression(1),
+                right: new AdditionExpression(
+                    left: new DoubleExpression(2),
+                    right: new DoubleExpression(3)));
+            var ep = new ExpressionPrinter();
+            ep.Visit(e);
+            Console.WriteLine(ep.ToString());
             #endregion
             Console.ReadLine();
         }
