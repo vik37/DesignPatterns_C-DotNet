@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
-using VisitorDP_UdemyDesignPatterns_ConsoleApp.AcyclicVisitor;
+using VisitorDP_UdemyDesignPatterns_ConsoleApp.Task;
+//using VisitorDP_UdemyDesignPatterns_ConsoleApp.AcyclicVisitor;
 //using VisitorDP_UdemyDesignPatterns_ConsoleApp.ReductionsAndTransformations;
 //using VisitorDP_UdemyDesignPatterns_ConsoleApp.ReflectiveVisitor;
 //using VisitorDP_UdemyDesignPatterns_ConsoleApp.Visitor;
@@ -67,15 +68,32 @@ namespace VisitorDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Acyclic Visitor
-            var e = new AdditionExpression(
-                left: new DoubleExpression(1),
-                right: new AdditionExpression(
-                    left: new DoubleExpression(2),
-                    right: new DoubleExpression(3)));
+            //var e = new AdditionExpression(
+            //    left: new DoubleExpression(1),
+            //    right: new AdditionExpression(
+            //        left: new DoubleExpression(2),
+            //        right: new DoubleExpression(3)));
+            //var ep = new ExpressionPrinter();
+            //ep.Visit(e);
+            //Console.WriteLine(ep.ToString());
+            #endregion
+
+            #region Task
+
+            //var simple = new AdditionExpression(new Value(2), new Value(3));
+            //var ep = new ExpressionPrinter();
+            //ep.Visit(simple);
+            //Console.WriteLine(ep.ToString());
+
+            var expr = new MultiplicationExpression(
+          new AdditionExpression(new Value(2), new Value(3)),
+          new Value(4)
+          );
             var ep = new ExpressionPrinter();
-            ep.Visit(e);
+            ep.Visit(expr);
             Console.WriteLine(ep.ToString());
             #endregion
+
             Console.ReadLine();
         }
     }
