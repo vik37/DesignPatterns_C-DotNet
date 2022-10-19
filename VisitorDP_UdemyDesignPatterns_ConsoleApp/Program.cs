@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
-using VisitorDP_UdemyDesignPatterns_ConsoleApp.ReflectiveVisitor;
+using VisitorDP_UdemyDesignPatterns_ConsoleApp.ReductionsAndTransformations;
+//using VisitorDP_UdemyDesignPatterns_ConsoleApp.ReflectiveVisitor;
 //using VisitorDP_UdemyDesignPatterns_ConsoleApp.Visitor;
 
 namespace VisitorDP_UdemyDesignPatterns_ConsoleApp
@@ -34,19 +35,34 @@ namespace VisitorDP_UdemyDesignPatterns_ConsoleApp
             #endregion
 
             #region Classic Visitor (Double Dispatch)
-            var e = new AdditionalExpression(
-                new DoubleExpression(1),
-                new AdditionalExpression(
-                    new DoubleExpression(2),
-                    new DoubleExpression(3))
-                );
-            var ep = new ExpressionPrinterForVisitor();
-            ep.Visit(e);
-            Console.WriteLine(ep);
+            //var e = new AdditionalExpression(
+            //    new DoubleExpression(1),
+            //    new AdditionalExpression(
+            //        new DoubleExpression(2),
+            //        new DoubleExpression(3))
+            //    );
+            //var ep = new ExpressionPrinterForVisitor();
+            //ep.Visit(e);
+            //Console.WriteLine(ep);
 
-            var calc = new ExpressionCalculator();
-            calc.Visit(e);
-            Console.WriteLine($"{ep} = {calc.Result}");
+            //var calc = new ExpressionCalculator();
+            //calc.Visit(e);
+            //Console.WriteLine($"{ep} = {calc.Result}");
+            #endregion
+
+            #region Reductions and Transformations
+            var exp = new AdditionalExpression(
+                new DoubleExpression(1), new DoubleExpression(2));
+            var et = new EvaluationTransformer();
+            var result = exp.Reduce(et);
+            var pt = new PrintTransformer();
+            var text = exp.Reduce(pt);
+            Console.WriteLine($"{text} = {result}");
+
+            var st = new SquareTransformer();
+            Expression newExp = exp.Reduce(st);
+            text = newExp.Reduce(pt);
+            Console.WriteLine($"{text}");
             #endregion
             Console.ReadLine();
         }
